@@ -23,7 +23,7 @@ export default async ({ req, res, log, error }) => {
     log('Get sensor error:' + e);
   }
 
-  const insertValue = (sensorId) => {
+  function insertValue(sensorId) {
     setInterval(async () => {
       const rDValue = Math.floor(Math.random() * 100) + 1;
       try {
@@ -40,7 +40,7 @@ export default async ({ req, res, log, error }) => {
         log('Update sensor error:' + e);
       }
     }, 1000); // Interval set to 1000ms (1 second)
-  };
+  }
 
   return res.json();
 };
